@@ -139,16 +139,12 @@ class Maze():
                 if self._cells[I+1][J].has_left_wall == False and self._cells[I+1][J].visited == False:
                     neighbours.append("r")
             if len(neighbours) != 0:
-                print(f"valid directions: {neighbours}")
                 selected = neighbours[random.randrange(0,len(neighbours))]
-                print(f"selected neighbour: {selected}")
             else:
                 return False
             match selected:
                  #I = row, J = col
                 case "t":
-                    print(f"drawing line from cell at x:{self._cells[I][J].x1}, y:{self._cells[I][J].y1}")
-                    print(f"drawing line from cell at x:{self._cells[I][J].x1}, y:{self._cells[I][J].y1}")
                     self._cells[I][J].draw_move(self._cells[I][J-1])
                     Answer = self._solve_R(I,J-1)
                     if Answer == False:
@@ -178,5 +174,5 @@ class Maze():
         if self._win is None:
             return
         self._win.redraw()
-        #time.sleep(0.05)
+        time.sleep(0.05)
         #makes the maze load slower so you can appreciate the visuals of it, comment out the sleep to make it instant basically.

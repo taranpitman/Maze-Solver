@@ -18,7 +18,10 @@ def main():
     print("Maze built")
     maze._reset_cells_visited()
     final = maze.solve()
-    print(final)
+    if final == True:
+        print("Maze solved successfully!")
+    else:
+        print("Error occured, you broke it.")
     #anything you do should go before this, as wait_for_close() is essentially the ending
     win.wait_for_close()
 main()

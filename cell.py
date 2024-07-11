@@ -39,13 +39,6 @@ class Cell():
         #so if its not undo, its red, if its undo its grey
         start = Point(self.x1 + ((self.x2 - self.x1)/2), self.y1 + ((self.y2 - self.y1)/2))
         end = Point(to_cell.x1 + ((to_cell.x2 - to_cell.x1)/2), to_cell.y1 + ((to_cell.y2 - to_cell.y1)/2))
-        #print(f"cell 1s coordinates are: {self.x1},{self.x2},{self.y1},{self.y2}")
-        #print(f"cell 1s middle point is: x: {self.x1 + ((self.x2 - self.x1)/2)}, y: {self.y1 + ((self.y2 - self.y1)/2)}")
-        #print(f"cell 2s coordinates are: {to_cell.x1},{to_cell.x2},{to_cell.y1},{to_cell.y2}")
-        #print(f"cell 2s middle point is: x:{to_cell.x1 + ((to_cell.x2 - to_cell.x1)/2)}, y:{to_cell.y1 + ((to_cell.y2 - to_cell.y1)/2)}")
-
-        #print(f"line drawn between{self.x1 + ((self.x2 - self.x1)/2)}, {self.y1 + ((self.y2 - self.y1)/2)} and {to_cell.x1 + ((to_cell.x2 - to_cell.x1)/2)}, {to_cell.y1 + ((to_cell.y2 - to_cell.y1)/2)}")
         path = Line(start,end)
         self._win.draw_line(path, colour)
         #get the middle point of the start cell and other cell, then draw a line between them.
-        #NOT YET TESTED SORRY
